@@ -5,9 +5,9 @@ export interface Employee{
     id: number;
     name: string;
     email: string;
+    imgUrl: string;
     department: Department;
     discType: string;
-    image_url: string;
 }
 
 const useEmployees = () => useData<Employee>("/employees");

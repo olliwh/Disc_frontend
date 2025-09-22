@@ -15,9 +15,9 @@ const useData = <T>(endpoint: string) => {
     setIsLoading(true);
     
     apiClient
-      .get<T[]>(endpoint, { signal: controller.signal })  // Changed: T[] instead of Response<T>
+      .get<T[]>(endpoint, { signal: controller.signal })  
       .then((res) => {
-        setData(res.data);  // Changed: res.data instead of res.data.results
+        setData(res.data);  
         setIsLoading(false);
         console.log('res');
         console.log(res.data);

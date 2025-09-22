@@ -1,5 +1,6 @@
 import useEmployees from '../hooks/useEmployees';
-import {  Text } from "@chakra-ui/react";
+import {  SimpleGrid, Text } from "@chakra-ui/react";
+import EmployeeCard from './EmployeeCard';
 
 
 
@@ -13,11 +14,11 @@ const EmployeeGrid = () => {
     <div>
       {error && <Text color="red">{error}</Text>}
       {isLoading && <Text>Loading...{isLoading}</Text>}
-        <ul>
+        <SimpleGrid columns={{sm:1, md:2, lg:3, xl:5}} spacing={10} padding={10}>
             {employees?.map(employee => (
-                <li key={employee.id}>{employee.name} - {employee.department?.name || 'No Department'}</li>
+              <EmployeeCard employee={employee} key={employee.id} />
             ))}
-        </ul>
+        </SimpleGrid>
       
     </div>
   )
