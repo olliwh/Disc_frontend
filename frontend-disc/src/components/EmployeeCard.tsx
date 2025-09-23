@@ -7,6 +7,7 @@ interface Props{
 }
 const EmployeeCard = ({employee}: Props) => {
   const color = '#' +  employee.discType.color;
+
   return (
     <Card>
         <Image 
