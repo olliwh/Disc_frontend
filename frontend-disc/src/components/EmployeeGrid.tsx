@@ -2,15 +2,10 @@ import useEmployees from '../hooks/useEmployees';
 import {  SimpleGrid, Text } from "@chakra-ui/react";
 import EmployeeCard from './EmployeeCard';
 
-
-
-
 const EmployeeGrid = () => {
     const { data: employees, error, isLoading } = useEmployees();
 
   return (
-    console.log(employees),
-    console.log('employeegrid'),
     <div>
       {error && <Text color="red">{error}</Text>}
       {isLoading && <Text>Loading...{isLoading}</Text>}

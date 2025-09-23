@@ -1,5 +1,8 @@
 import useData from './useData';
 import type { Department } from './useDepartments';
+import type { DiscProfile } from './useDiscProfiles';
+
+
 
 export interface Employee{
     id: number;
@@ -7,7 +10,7 @@ export interface Employee{
     email: string;
     imgUrl: string;
     department: Department;
-    discType: string;
+    discType: DiscProfile;
 }
 
 const useEmployees = () => useData<Employee>("/employees");

@@ -1,6 +1,8 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, Show, Stack } from "@chakra-ui/react";
 import { NavBar } from "./components/NavBar";
 import EmployeeGrid from "./components/EmployeeGrid";
+import DepartmentList from "./components/DepartmentList";
+import DiscProfileList from "./components/DiscProfileList";
 
 
 function App() {
@@ -15,8 +17,10 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem pl="2" area={"aside"}>
-          {/* <GenreList /> */}
-          aside
+          <Stack padding={5} spacing={10}>
+          <DepartmentList />
+          <DiscProfileList />
+          </Stack>
         </GridItem>
       </Show>
       <GridItem pl="2" area={"main"}>
