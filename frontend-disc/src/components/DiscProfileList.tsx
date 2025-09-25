@@ -1,4 +1,4 @@
-import { Heading, HStack, List, ListItem, Text, Box } from "@chakra-ui/react";
+import { Heading, HStack, List, ListItem, Text, Box, Spinner } from "@chakra-ui/react";
 import useDiscProfiles from "../hooks/useDiscProfiles";
 
 const DiscProfileList = () => {
@@ -27,7 +27,7 @@ const DiscProfileList = () => {
   const { data: DiscProfiles, error, isLoading } = useDiscProfiles();
 
   if (isLoading) return <div>loading</div>;
-  if (error) return <div>{error}</div>;
+  if (error) return <Spinner />
   return (
     <div>
       <Heading fontSize={"2xl"} marginBottom={2}>
