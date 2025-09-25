@@ -1,13 +1,12 @@
 import axios from "axios";
-// http://localhost:7051/api/employees
-  
-  
 
 const apiClient = axios.create({
   
   baseURL: "http://localhost:5194/api",
-  headers: {
-    'X-API-Key': import.meta.env["VITE_COMPANY_DISC_API_KEY"],
+  params: {
+    key: import.meta.env["VITE_COMPANY_DISC_API_KEY"]
+  },
+    headers: {
     'Content-Type': 'application/json'
   }
   
