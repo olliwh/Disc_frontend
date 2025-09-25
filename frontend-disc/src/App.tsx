@@ -3,10 +3,12 @@ import { NavBar } from "./components/NavBar";
 import EmployeeGrid from "./components/EmployeeGrid";
 import DepartmentList from "./components/DepartmentList";
 import DiscProfileList from "./components/DiscProfileList";
+import { useState } from "react";
+import type { Department } from "./hooks/useDepartments";
 
 
 function App() {
-
+  const [slectedDepartment, setSelectedDepartment] = useState<Department | null>(null);
   return (
         <Grid
       templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
@@ -18,14 +20,13 @@ function App() {
       <Show above="lg">
         <GridItem pl="2" area={"aside"}>
           <Stack padding={5} spacing={10}>
-          <DepartmentList />
+          <DepartmentList selectedDepartment={slectedDepartment} onSelectedDepartment={(department) =>setSelectedDepartment(department)} />
           <DiscProfileList />
           </Stack>
         </GridItem>
       </Show>
       <GridItem pl="2" area={"main"}>
-        <EmployeeGrid />
-        main
+        <EmployeeGrid selectedDepartment={slectedDepartment}/>
       </GridItem>
     </Grid>
 

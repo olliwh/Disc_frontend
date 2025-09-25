@@ -13,6 +13,9 @@ export interface Employee{
     discType: DiscProfile;
 }
 
-const useEmployees = () => useData<Employee>("/employees");
+const useEmployees = (selectedDepartment: Department | null) => useData<Employee>(
+    "/employees",
+{params: {departments: selectedDepartment?.id}},
+[selectedDepartment?.id]);
 
 export default useEmployees
