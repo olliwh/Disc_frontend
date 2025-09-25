@@ -14,7 +14,7 @@ const EmployeeCard = ({employee}: Props) => {
           src={employee.imgUrl} 
           alt={employee.name}
           width="100%"
-          height="250px"
+          height={"240px"}
           objectFit="cover"
           objectPosition="center top" 
         />

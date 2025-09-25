@@ -6,10 +6,10 @@ import axios from "axios";
 const apiClient = axios.create({
   
   baseURL: "http://localhost:5194/api",
-  headers: {
-    'X-API-Key': import.meta.env.VITE_COMPANY_DISC_API_KEY,
-    'Content-Type': 'application/json'
-  }
+  // headers: {
+  //   'X-API-Key': import.meta.env.VITE_COMPANY_DISC_API_KEY,
+  //   'Content-Type': 'application/json'
+  // }
   
 
 });

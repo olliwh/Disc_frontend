@@ -2,6 +2,24 @@ import { Heading, List, ListItem, Text } from "@chakra-ui/react";
 import useDepartments from "../hooks/useDepartments";
 
 const DepartmentList = () => {
+//   const departmentsArray = [
+//   {
+//     "id": 1,
+//     "name": "HR"
+//   },
+//   {
+//     "id": 2,
+//     "name": "IT"
+//   },
+//   {
+//     "id": 3,
+//     "name": "Customer Service"
+//   },
+//   {
+//     "id": 4,
+//     "name": "Support"
+//   }
+// ]
   const { data: departments, error, isLoading } = useDepartments();
 
   if (isLoading) return <div>loading</div>;
