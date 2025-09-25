@@ -1,6 +1,7 @@
 import { Button, Heading, List, ListItem, Spinner } from "@chakra-ui/react";
 
 import useDepartments, { type Department } from "../hooks/useDepartments";
+import { useState } from "react";
 
 //   const departmentsArray = [
 //   {
@@ -27,6 +28,8 @@ interface Props {
 
 const DepartmentList = ({ onSelectedDepartment, selectedDepartment }: Props) => {
   const { data: departments, error, isLoading } = useDepartments();
+  const [isExpanded, setIsExpanded]= useState(false);
+  const displayedDepartments = isExpanded ? departments : departments.slice(0,5);
 
   if (isLoading) return <Spinner />;
   // if (error) return <div>{error}</div>;
@@ -40,7 +43,7 @@ const DepartmentList = ({ onSelectedDepartment, selectedDepartment }: Props) => 
         </Button>
 
       <List>
-        {departments.map((department) => (
+        {displayedDepartments.map((department) => (
           <ListItem key={department.id}>
             <Button
             colorScheme={department.id === selectedDepartment?.id ? "blue" : "gray"}
@@ -51,6 +54,11 @@ const DepartmentList = ({ onSelectedDepartment, selectedDepartment }: Props) => 
             </Button>
           </ListItem>
         ))}
+                {departments.length > 5 && (
+            <Button onClick={() => setIsExpanded(!isExpanded)} mt={3}>
+                {isExpanded ? "show less": "Show More"}
+            </Button>
+        )}
       </List>
     </div>
   );

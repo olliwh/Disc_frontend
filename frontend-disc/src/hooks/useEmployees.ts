@@ -1,3 +1,4 @@
+import type { EmployeeQuery } from '../App';
 import useData from './useData';
 import type { Department } from './useDepartments';
 import type { DiscProfile } from './useDiscProfiles';
@@ -13,9 +14,9 @@ export interface Employee{
     discType: DiscProfile;
 }
 
-const useEmployees = (selectedDepartment: Department | null) => useData<Employee>(
+const useEmployees = (employeeQuery: EmployeeQuery) => useData<Employee>(
     "/employees",
-{params: {departments: selectedDepartment?.id}},
-[selectedDepartment?.id]);
+{params: {departments: employeeQuery.department?.id}},
+[employeeQuery]);
 
 export default useEmployees
