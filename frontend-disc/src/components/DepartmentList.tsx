@@ -1,7 +1,7 @@
-import { Button, Heading, List, ListItem, Spinner } from "@chakra-ui/react";
+import { Button, Heading, List, ListItem } from "@chakra-ui/react";
 
-import useDepartments, { type Department } from "../hooks/useDepartments";
 import { useState } from "react";
+import type { Department } from "../hooks/useDepartments";
 
   const departmentsArray = [{"id":1,"name":"HR"},{"id":2,"name":"IT"},{"id":3,"name":"Customer Service"},{"id":4,"name":"Support"},{"id":5,"name":"Reception"},{"id":6,"name":"Finance"},{"id":7,"name":"Marketing"}]
 interface Props {
