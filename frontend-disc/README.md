@@ -54,17 +54,9 @@ VITE_COMPANY_DISC_API_KEY=your_api_key_here
 - `src/services/` – API client setup
 - `src/assets/` – Images and static assets
 
-## API
-
-The app expects a backend API at `http://localhost:5194/api`. Update `src/services/api-client.ts` if your API URL differs.
-
-## License
-
-MIT
+all the code commented out, is for it to fit my api, but i can not deploy my api yet, so i have hardcoded arrays to get data
 
 Todo:
-genre list items look wierd
-when filtering employees the old list is still shown while the new list is loading
+
 REMEMBER TO DEPLOY -> auto deploy not working
 reusebal gerneric list component
-add spinner to disctype list
