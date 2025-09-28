@@ -1,3 +1,6 @@
+all the code commented out, is for it to fit my api, but i can not deploy my api yet, so i have hardcoded arrays to get data.
+filtering by departments works with the localhost api, but not the harcoded array
+
 # DISC Employee Directory
 
 A React + TypeScript web application for browsing employees by department and DISC profile, styled with Chakra UI.
@@ -54,7 +57,7 @@ VITE_COMPANY_DISC_API_KEY=your_api_key_here
 - `src/services/` – API client setup
 - `src/assets/` – Images and static assets
 
-all the code commented out, is for it to fit my api, but i can not deploy my api yet, so i have hardcoded arrays to get data
+
 
 Todo:
 
